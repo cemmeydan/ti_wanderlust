@@ -10,18 +10,26 @@ From: dynverse/dynwrap:py3.6
 %labels
     version 0.1.4
 
-%setup
-    mkdir /scratchLocal
-    mkdir /pbtech_mounts
-    mkdir /pbtech_mounts/softlib001
-    mkdir /athena
-    mkdir /zenodotus
+
+    
+    
+    
+    
+    
 
 %files
 
     . /code
 
 %post
+    mkdir /scratchLocal
+    mkdir /pbtech_mounts
+    mkdir /pbtech_mounts/softlib001
+    mkdir /athena
+    mkdir /zenodotus
+
+
+
     chmod -R 755 '/code'
     pip install Cython
     pip install git+https://github.com/dynverse/pywishbone --upgrade --upgrade-strategy only-if-needed
